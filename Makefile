@@ -21,7 +21,7 @@ tands.o: tands.c
 
 
 # debug 
-debug: $(OBJS)
+debug: $(DBGOBJS)
 	$(CXX) $(DBGCXXFLAGS) $(DBGOBJS) -o $(EXE)
 
 debug_prodcon.o: prodcon.cpp prodcon.h debug_tands.o
