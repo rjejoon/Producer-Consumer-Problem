@@ -11,7 +11,7 @@ EXE = prodcon
 
 # release
 executable: $(OBJS)
-	$(CXX) $(CXXFLAGS) $(OBJS) -o $(EXE)
+	$(CXX) $(CXXFLAGS) -pthread $(OBJS) -o $(EXE)
 
 prodcon.o: prodcon.cpp prodcon.h tands.o
 	$(CXX) $(CXXFLAGS) -c prodcon.cpp tands.o -o prodcon.o
@@ -22,7 +22,7 @@ tands.o: tands.c
 
 # debug 
 debug: $(DBGOBJS)
-	$(CXX) $(DBGCXXFLAGS) $(DBGOBJS) -o $(EXE)
+	$(CXX) $(DBGCXXFLAGS) -pthread $(DBGOBJS) -o $(EXE)
 
 debug_prodcon.o: prodcon.cpp prodcon.h debug_tands.o
 	$(CXX) $(DBGCXXFLAGS) -c prodcon.cpp debug_tands.o -o debug_prodcon.o
