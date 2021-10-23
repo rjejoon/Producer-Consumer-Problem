@@ -1,3 +1,5 @@
+CC = gcc
+CXX = g++
 CFLAGS = -Wall -std=c99 -O
 CXXFLAGS = -Wall -std=c++17 -O
 DBGCFLAGS = -Wall -std=c99 -g
@@ -13,8 +15,8 @@ EXE = prodcon
 executable: $(OBJS)
 	$(CXX) $(CXXFLAGS) -pthread $(OBJS) -o $(EXE)
 
-prodcon.o: prodcon.cpp prodcon.h tands.o
-	$(CXX) $(CXXFLAGS) -c prodcon.cpp tands.o -o prodcon.o
+prodcon.o: prodcon.cpp prodcon.h tands.c
+	$(CXX) $(CXXFLAGS) -c prodcon.cpp -o prodcon.o
 
 tands.o: tands.c
 	$(CC) $(CFLAGS) -c tands.c -o tands.o
